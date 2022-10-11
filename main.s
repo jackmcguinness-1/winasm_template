@@ -5,10 +5,15 @@ extern _printf
 global _main
 
 _main:
+    push number
     push message
     call _printf
-    add esp, 4
+
+    add esp, 8
     ret
 
+
+
 section .rodata
-message: db "Hello, world", 0x0a
+message: db "Hello, world "
+number: db 48 + 0x5, 0xa
